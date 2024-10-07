@@ -25,7 +25,7 @@ hold on
 plot(1:100,tdft,'r')
 plot(1:100,tmix,'b')
 plot(1:100,tfft,'g')
-legend('fft','dft','nmix3780')
+legend('dft','nmix3780','fft')
 hold off
 
 a=fft(xn)/1890;
@@ -37,14 +37,14 @@ hold on
 plot(w,fftshift(abs(a)),'g-*')
 plot(w,fftshift(abs(b)),'b-o')
 plot(w,fftshift(abs(c)),'r')
-legend('fft','dft','nmix3780')
+legend('fft','nmix3780','dft')
 hold off
 
-disp('Æ½¾ù¼ÆËãÊ±¼ä:')
+disp('å¹³å‡è®¡ç®—æ—¶é—´:')
 disp(['dft:',num2str(mean(tdft))])
 disp(['nmix3780:',num2str(mean(tmix))])
-disp(['dft:',num2str(mean(tfft))])
-disp(['nmix3780Ëã·¨ºÍfftËã·¨¼ÆËã½á¹ûÏàËÆ¶È£¬Êµ²¿£º',num2str(corr2(real(a),real(b))),...
-    'Ğé²¿£º',num2str(corr2(imag(a),imag(b)))])
-disp(['nmix3780Ëã·¨ºÍdftËã·¨¼ÆËã½á¹ûÏàËÆ¶È£¬Êµ²¿£º',num2str(corr2(real(a),real(c))),...
-    'Ğé²¿£º',num2str(corr2(imag(a),imag(c)))])
+disp(['fft:',num2str(mean(tfft))])
+disp(['nmix3780ç®—æ³•å’Œfftç®—æ³•è®¡ç®—ç»“æœç›¸ä¼¼åº¦ï¼Œå®éƒ¨ï¼š',num2str(corr2(real(a),real(b))),...
+    'è™šéƒ¨ï¼š',num2str(corr2(imag(a),imag(b)))])
+disp(['nmix3780ç®—æ³•å’Œdftç®—æ³•è®¡ç®—ç»“æœç›¸ä¼¼åº¦ï¼Œå®éƒ¨ï¼š',num2str(corr2(real(b),real(c))),...
+    'è™šéƒ¨ï¼š',num2str(corr2(imag(b),imag(c)))])
